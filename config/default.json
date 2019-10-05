@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://slick-nick:BusterBrown@cluster0-auqfv.mongodb.net/admin?retryWrites=true&w=majority"
+}
