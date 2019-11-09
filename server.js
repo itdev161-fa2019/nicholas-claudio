@@ -107,11 +107,19 @@ app.post(
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
     } else {
-      const { emial, password } = req.body;
+      const { email, password } = req.body;
       try {
         // Check if user exists
         let user = await User.findOne({ email: email });
         if (!user) {
+          return res
+            .status(400)
+            .json({ errors: [{ msg: 'Invalid email or password'}]});
+        }
+
+        // Check password
+        const match = await bcrypt.compare(password, user.password);
+        if (!match) {
           return res
             .status(400)
             .json({ errors: [{ msg: 'Invalid email or password'}]});
