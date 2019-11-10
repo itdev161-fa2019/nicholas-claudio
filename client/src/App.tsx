@@ -80,8 +80,8 @@ class App extends React.Component {
               </li>
               <li>
                 {user ?
-                <Link to="" onClick={this.logOut}>Log out</Link> :
-                <Link to="/login">Log in</Link>
+                <Link to="" onClick={this.logOut}>Logout</Link> :
+                <Link to="/login">Login</Link>
                 }
               </li>
             </ul>

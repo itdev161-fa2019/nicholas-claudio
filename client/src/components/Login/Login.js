@@ -35,7 +35,7 @@ const Login = ({authenticateUser}) => {
       }
 
       const body = JSON.stringify(newUser);
-      const res = await axios.post('http//localhost:5000/api/login', body, config);
+      const res = await axios.post('http://localhost:5000/api/login', body, config);
 
       // Store user data and redirect
       localStorage.setItem('token', res.data.token);
@@ -60,10 +60,16 @@ const Login = ({authenticateUser}) => {
         <input
           type="text"
           placeholder="Email"
+          name="email"
+          value={email}
+          onChange={e => onChange(e)} />
+      </div>
+      <input
+          type="text"
+          placeholder="Password"
           name="password"
           value={password}
           onChange={e => onChange(e)} />
-      </div>
       <div>
         <button onClick={() => loginUser()}>Login</button>
       </div>
