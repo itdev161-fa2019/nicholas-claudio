@@ -262,7 +262,7 @@ app.delete('/api/posts/:id', auth, async (req, res) => {
  * @route PUT api/posts/:id
  * @desc Update a post
  */
-app.put('/api/post/:id', auth, async (req, res) => {
+app.put('/api/posts/:id', auth, async (req, res) => {
   try {
     const { title, body } = req.body;
     const post = await Post.findById(req.params.id);
@@ -277,7 +277,7 @@ app.put('/api/post/:id', auth, async (req, res) => {
       return res.status(401).json({ msg: 'User not authorized' });
     }
 
-    // Update the post ad return
+    // Update the post and return
     post.title = title || post.title;
     post.body = body || post.body;
 
