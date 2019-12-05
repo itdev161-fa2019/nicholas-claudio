@@ -39,8 +39,7 @@ const CreatePost = ({ onPostCreated, token }) => {
 
         // Create the post
         const body = JSON.stringify(newPost);
-        const res = await axios.post(
-          'http://localhost:5000/api/posts',
+        const res = await axios.post('api/posts',
           body,
           config
         );
