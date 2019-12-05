@@ -9,7 +9,7 @@ const EditPost = ({ token, post, onPostUpdated }) => {
     title: post.title,
     body:post.body
   });
-  const { title, body } = PostData;
+  const { title, body } = postData;
 
   const onChange = e => {
     const { name, value } = e.target;
@@ -71,7 +71,7 @@ const EditPost = ({ token, post, onPostUpdated }) => {
         value={body}
         onChange={e => onChange(e)}
       ></textarea>
-      <button onClick={() => Update()}>Submit</button>
+      <button onClick={() => update()}>Submit</button>
     </div>
   );
 };
